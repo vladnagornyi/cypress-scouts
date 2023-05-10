@@ -6,3 +6,4 @@ describe('Demo Tests', () => {
         .should('contain', 'PRODUCT STORE')
     })
   })
+  
