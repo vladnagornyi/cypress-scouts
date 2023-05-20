@@ -4,6 +4,8 @@ describe('Demo Tests', () => {
   
       cy.get('#nava')
         .should('contain', 'PRODUCT STORE')
+
+        cy.get('#cartur').click()
+  
     })
   })
-  
