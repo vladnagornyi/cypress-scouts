@@ -4,10 +4,10 @@ describe('productToCard', () => {
     // open website
     cy.visit("https://www.demoblaze.com/");
     // go to product page
-    cy.get("#tbodyid > div:nth-of-type(1) > div > div a").click();
+    cy.contains('Samsung galaxy s6').click();
     // click on add to cart
     cy.location("href").should("eq", "https://www.demoblaze.com/prod.html?idp_=1");
     // The product has been added to the cart and click "ok"
-    cy.get("#tbodyid a").click()
+    cy.contains('Add to cart').click();
   })
 })
