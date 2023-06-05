@@ -9,5 +9,5 @@ describe('productToCard', () => {
     cy.location("href").should("eq", "https://www.demoblaze.com/prod.html?idp_=1");
     // The product has been added to the cart and click "ok"
     cy.contains('a[onclick="addToCart(1)"]', 'Add to cart').click();
-  })
-})
+  });
+});
