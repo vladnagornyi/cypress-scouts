@@ -1,3 +1,4 @@
+Cypress._.times(10, () => {
 describe('orderingProduct', () => {
     it('checking ordering the product', () => {
     
@@ -17,6 +18,7 @@ describe('orderingProduct', () => {
     cy.wait(100);
     // filling and checking the order fields 
     cy.get('#name').click().type('name');
+    cy.wait(100);
     cy.get('#name').should('have.value', 'name');
     cy.get('#country').click().type('USA');
     cy.get('#country').should('have.value', 'USA');
@@ -37,4 +39,5 @@ describe('orderingProduct', () => {
     // check homepage opening
     cy.url().should('eq', 'https://www.demoblaze.com/index.html');
   });
+});
 });
