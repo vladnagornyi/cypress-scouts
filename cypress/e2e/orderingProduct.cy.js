@@ -38,7 +38,7 @@ Cypress._.times(10, () => {
       cy.contains('button.confirm', 'OK').click();
       // check homepage opening
       cy.wait(1000);
-      cy.url().should('eq', '/index.html');
+      cy.location('pathname').should('eq', '/index.html');
     });
   });
   });
