@@ -11,7 +11,7 @@ Cypress._.times(10, () => {
       // go to product page
       cy.contains('.card-title', 'Samsung galaxy s6').click();
       // click on add to cart
-      cy.contains('.btn', 'Add to cart').should('be.visible', { timeout: 5000 }).click();
+      cy.contains('.btn', 'Add to cart').click();
       cy.wait('@addtocart');
       // click cart button
       cy.contains('a.nav-link#cartur', 'Cart').click();
@@ -33,7 +33,7 @@ Cypress._.times(10, () => {
       // go to product page
       cy.contains('.card-title', 'Sony vaio i5').click();
       // The product has been added to the cart and click "ok"
-      cy.contains('.btn', 'Add to cart').should('be.visible', { timeout: 5000 }).click();
+      cy.contains('.btn', 'Add to cart').click();
       cy.wait('@addtocart');
       // click cart button
       cy.contains('a.nav-link#cartur', 'Cart').click();
