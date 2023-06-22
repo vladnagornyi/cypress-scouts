@@ -15,12 +15,12 @@ Cypress._.times(10, () => {
       cy.wait('@addtocart');
       // click cart button
       cy.contains('a.nav-link#cartur', 'Cart').click();
+      cy.wait('@viewcart');
       // click place order button
       cy.contains('.btn', 'Place Order').click();
       cy.orderfields();
       // click Purchase button
       cy.contains('.btn', 'Purchase').click();
-      cy.wait('@viewcart');
       // check for success message
       cy.contains('h2', 'Thank you for your purchase!').should('be.visible');
       cy.wait(1000);
@@ -34,8 +34,10 @@ Cypress._.times(10, () => {
       cy.contains('.card-title', 'Sony vaio i5').click();
       // The product has been added to the cart and click "ok"
       cy.contains('.btn', 'Add to cart').should('be.visible', { timeout: 5000 }).click();
+      cy.wait('@addtocart');
       // click cart button
       cy.contains('a.nav-link#cartur', 'Cart').click();
+      cy.wait('@viewcart');
       // click place order button
       cy.contains('.btn', 'Place Order').click();
       cy.orderfields();
