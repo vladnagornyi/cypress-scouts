@@ -11,7 +11,7 @@ Cypress._.times(10, () => {
       // go to product page
       cy.contains('.card-title', 'Samsung galaxy s6').click();
       // click on add to cart
-      cy.get('.btn').contains('Add to cart').click();
+      cy.get('#tbodyid a.btn-success').click();
       cy.wait('@addtocart');
       // click cart button
       cy.contains('a.nav-link#cartur', 'Cart').click();
