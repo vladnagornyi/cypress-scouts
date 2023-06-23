@@ -24,6 +24,13 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+Cypress.Commands.add('addProductToCart', (product) => {
+    // go to product page
+    cy.contains('.card-title', product).click();
+    // click on add to cart
+    cy.get('#tbodyid a.btn-success').click();
+});
+
 Cypress.Commands.add('orderfields', () => {
     // filling and checking the order fields
     cy.get('#name').invoke('val', 'name');
