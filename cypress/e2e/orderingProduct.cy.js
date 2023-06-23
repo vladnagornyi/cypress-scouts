@@ -1,6 +1,7 @@
 Cypress._.times(10, () => {
   describe('orderingProduct', () => {
     beforeEach(() => {
+      cy.intercept("POST", "/bycat").as("category");
       cy.intercept('POST', '/addtocart').as('addtocart');
       cy.intercept('POST', '/viewcart').as("viewcart");
       // open website
@@ -8,6 +9,8 @@ Cypress._.times(10, () => {
     });
 
     it('checking ordering phone', () => {
+      cy.contains('.list-group-item', 'Phones').click();
+      cy.wait('@category');
       // go to product page
       cy.contains('.card-title', 'Samsung galaxy s6').click();
       // click on add to cart
@@ -30,6 +33,8 @@ Cypress._.times(10, () => {
     });
 
     it('checking ordering laptop', () => {
+      cy.contains('.list-group-item', 'Phones').click();
+      cy.wait('@category');
       // go to product page
       cy.contains('.card-title', 'Sony vaio i5').click();
       // The product has been added to the cart and click "ok"
