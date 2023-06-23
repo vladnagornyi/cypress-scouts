@@ -26,7 +26,7 @@
 
 Cypress.Commands.add('addProductToCart', (product) => {
     // go to product page
-    cy.contains('.card-title', product).click();
+    cy.contains('.hrefch', product).click()
     // click on add to cart
     cy.get('#tbodyid a.btn-success').click();
 });
